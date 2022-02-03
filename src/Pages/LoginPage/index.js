@@ -8,18 +8,18 @@ export default function LoginPage(){
           <form>
             <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
               name="email"
             />
             <input
               type="password"
-              placeholder="senha"
+              placeholder="Senha"
               name="password"
             />
             <Button>Entrar
             </Button>
           </form>
-          <Link to="/cadastro">Não tem uma conta? Cadastre-se!</Link>
+          <Link to="/sign-up">Não tem uma conta? Cadastre-se!</Link>
         </Container>
     )
 }
