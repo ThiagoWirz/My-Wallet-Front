@@ -1,9 +1,9 @@
-import { Container, Button } from "./style";
+import { Container, Button } from "../InputPage/style";
 
-export default function InputPage(){
+export default function OutputPage(){
     return(
         <Container>
-            <header>Nova entrada</header>
+            <header>Nova saída</header>
           <form>
             <input
               type="number"
@@ -15,7 +15,7 @@ export default function InputPage(){
               placeholder="Descrição"
               name="description"
             />
-            <Button>Salvar entrada
+            <Button>Salvar saída
             </Button>
           </form>
         </Container>

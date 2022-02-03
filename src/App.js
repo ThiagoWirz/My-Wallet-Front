@@ -6,6 +6,7 @@ import "./assets/css/style.css";
 import SignUpPage from "./Pages/SignUpPage";
 import AccountPage from "./Pages/AccountPage";
 import InputPage from "./Pages/InputPage";
+import OutputPage from "./Pages/OutputPage"
 
 export default function App(){
     return (
@@ -15,6 +16,7 @@ export default function App(){
             <Route path = "/sign-up" element={<SignUpPage/>}/>
             <Route path = "/account" element={<AccountPage/>}/>
             <Route path = "/input" element={<InputPage/>}/>
+            <Route path = "/output" element={<OutputPage/>}/>
         </Routes>
         </BrowserRouter>
     )
