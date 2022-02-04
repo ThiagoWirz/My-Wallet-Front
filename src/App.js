@@ -7,9 +7,12 @@ import SignUpPage from "./Pages/SignUpPage";
 import AccountPage from "./Pages/AccountPage";
 import InputPage from "./Pages/InputPage";
 import OutputPage from "./Pages/OutputPage"
+import UserContext from "./contexts/userContext";
 
 export default function App(){
+    const [user, setUser] = useState({})
     return (
+        <UserContext.Provider value={{user, setUser}}>
         <BrowserRouter>
         <Routes>
             <Route path = "/" element={<LoginPage/>}/>
@@ -19,5 +22,6 @@ export default function App(){
             <Route path = "/output" element={<OutputPage/>}/>
         </Routes>
         </BrowserRouter>
+        </UserContext.Provider>
     )
 }

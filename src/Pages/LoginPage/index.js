@@ -10,6 +10,8 @@ export default function LoginPage() {
     setFormData({ ...formData });
   }
 
+  async function handleLogin(e)
+
   return (
     <Container>
       <img src={logo} alt="MyWallet" />
