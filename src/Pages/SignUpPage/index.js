@@ -3,6 +3,7 @@ import logo from "../../assets/img/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { signUp } from "../../services/mywallet";
+import Loader from "react-loader-spinner";
 
 export default function SignUpPage() {
   const navigate = useNavigate();

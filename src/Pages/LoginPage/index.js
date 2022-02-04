@@ -1,10 +1,10 @@
 import logo from "../../assets/img/logo.png";
 import { Container, Button } from "./style";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import UserContext from "../../contexts/userContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { logIn } from "../../services/mywallet";
+import Loader from "react-loader-spinner";
 
 
 export default function LoginPage() {
