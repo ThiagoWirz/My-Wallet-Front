@@ -5,6 +5,8 @@ import { useState } from "react/cjs/react.development";
 import UserContext from "../../contexts/userContext";
 import { useContext } from "react";
 import { logIn } from "../../services/mywallet";
+
+
 export default function LoginPage() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false)
@@ -36,9 +38,21 @@ export default function LoginPage() {
     <Container>
       <img src={logo} alt="MyWallet" />
       <form onSubmit={handleLogin}>
-        <input onChange={handleInputChange} value={formData.email} type="email" placeholder="Email" name="email" />
-        <input onChange={handleInputChange} value={formData.password} type="password" placeholder="Senha" name="password" />
-        <Button>Entrar</Button>
+        <input disabled={loading} onChange={handleInputChange} value={formData.email} type="email" placeholder="Email" name="email" />
+        <input disabled={loading} onChange={handleInputChange} value={formData.password} type="password" placeholder="Senha" name="password" />
+        <Button disabled={loading}>
+          {loading ? (
+            <Loader
+              type="ThreeDots"
+              color="#FFFFFF"
+              height={13}
+              width={51}
+              timeout={3000}
+            />
+          ) : (
+            "Entrar"
+          )}
+        </Button>
       </form>
       <Link to="/sign-up">Não tem uma conta? Cadastre-se!</Link>
     </Container>
