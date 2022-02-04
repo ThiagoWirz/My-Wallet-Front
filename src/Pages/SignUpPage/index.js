@@ -2,24 +2,45 @@ import { Container, Button } from "../LoginPage/style";
 import logo from "../../assets/img/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { signUp } from "../../services/mywallet";
 
 export default function SignUpPage() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     name: "",
     password: "",
   });
   const [confirmPass, setConfirmPass] = useState("")
+  const [loading, setLoading] = useState(false)
 
   function handleInputChange(e){
     formData[e.target.name] = e.target.value;
     setFormData({...formData})
   }
 
+  async function handleSignUp(e){
+    e.preventDefault()
+    if(confirmPass !== formData.password){
+      alert("Senha de confirmação inválida")
+      return
+    }
+    setLoading(true);
+    const promise = await signUp(formData)
+    try{
+      setLoading(false)
+      navigate("/")
+    }
+    catch (error){
+      alert(error.response.data.message)
+      setLoading(false)
+    }
+  }
+
   return (
     <Container>
       <img src={logo} alt="MyWallet" />
-      <form>
+      <form onSubmit={handleSignUp}>
         <input onChange={handleInputChange} value={formData.name} type="text" placeholder="Nome" name="name" />
         <input onChange={handleInputChange} value={formData.email} type="email" placeholder="Email" name="email" />
         <input onChange={handleInputChange} value={formData.password} type="password" placeholder="Senha" name="password" />
