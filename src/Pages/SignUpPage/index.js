@@ -27,14 +27,15 @@ export default function SignUpPage() {
       return;
     }
     setLoading(true);
-    const promise = await signUp(formData);
-    try {
-      setLoading(false);
-      navigate("/");
-    } catch (error) {
-      alert(error.response.data.message);
-      setLoading(false);
-    }
+    const promise = signUp(formData);
+    promise.then(() => {
+      setLoading(false)
+      navigate("/")
+    })
+    promise.catch((error) =>{
+      alert(error.response.data.message)
+      setLoading(false)
+    })
   }
 
   return (
