@@ -75,7 +75,6 @@ export default function SignUpPage() {
           name="confirm-password"
         />
         <Button disabled={loading}>
-          {" "}
           {loading ? (
             <Loader
               type="ThreeDots"
