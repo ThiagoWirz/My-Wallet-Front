@@ -10,7 +10,8 @@ import OutputPage from "./Pages/OutputPage"
 import UserContext from "./contexts/userContext";
 
 export default function App(){
-    const [user, setUser] = useState({})
+    const lastUser = JSON.parse(localStorage.getItem("Last User"))
+    const [user, setUser] = useState(lastUser)
     return (
         <UserContext.Provider value={{user, setUser}}>
         <BrowserRouter>
