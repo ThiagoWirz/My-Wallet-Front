@@ -11,29 +11,28 @@ export default function SignUpPage() {
     name: "",
     password: "",
   });
-  const [confirmPass, setConfirmPass] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [confirmPass, setConfirmPass] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  function handleInputChange(e){
+  function handleInputChange(e) {
     formData[e.target.name] = e.target.value;
-    setFormData({...formData})
+    setFormData({ ...formData });
   }
 
-  async function handleSignUp(e){
-    e.preventDefault()
-    if(confirmPass !== formData.password){
-      alert("Senha de confirmação inválida")
-      return
+  async function handleSignUp(e) {
+    e.preventDefault();
+    if (confirmPass !== formData.password) {
+      alert("Senha de confirmação inválida");
+      return;
     }
     setLoading(true);
-    const promise = await signUp(formData)
-    try{
-      setLoading(false)
-      navigate("/")
-    }
-    catch (error){
-      alert(error.response.data.message)
-      setLoading(false)
+    const promise = await signUp(formData);
+    try {
+      setLoading(false);
+      navigate("/");
+    } catch (error) {
+      alert(error.response.data.message);
+      setLoading(false);
     }
   }
 
@@ -41,17 +40,52 @@ export default function SignUpPage() {
     <Container>
       <img src={logo} alt="MyWallet" />
       <form onSubmit={handleSignUp}>
-        <input onChange={handleInputChange} value={formData.name} type="text" placeholder="Nome" name="name" />
-        <input onChange={handleInputChange} value={formData.email} type="email" placeholder="Email" name="email" />
-        <input onChange={handleInputChange} value={formData.password} type="password" placeholder="Senha" name="password" />
         <input
+          disabled={loading}
+          onChange={handleInputChange}
+          value={formData.name}
+          type="text"
+          placeholder="Nome"
+          name="name"
+        />
+        <input
+          disabled={loading}
+          onChange={handleInputChange}
+          value={formData.email}
+          type="email"
+          placeholder="Email"
+          name="email"
+        />
+        <input
+          disabled={loading}
+          onChange={handleInputChange}
+          value={formData.password}
+          type="password"
+          placeholder="Senha"
+          name="password"
+        />
+        <input
+          disabled={loading}
           onChange={(e) => setConfirmPass(e.target.value)}
-          value = {confirmPass}
+          value={confirmPass}
           type="password"
           placeholder="Confirme a Senha"
           name="confirm-password"
         />
-        <Button> Cadastrar</Button>
+        <Button disabled={loading}>
+          {" "}
+          {loading ? (
+            <Loader
+              type="ThreeDots"
+              color="#FFFFFF"
+              height={13}
+              width={51}
+              timeout={3000}
+            />
+          ) : (
+            "Cadastrar"
+          )}
+        </Button>
       </form>
       <Link to="/">Já tem uma conta? Faça login!</Link>
     </Container>
