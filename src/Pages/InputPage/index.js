@@ -3,13 +3,15 @@ import { useNavigate } from "react-router-dom";
 import UserContext from "../../contexts/userContext";
 import { postCredit } from "../../services/mywallet";
 import { Container, Button } from "./style";
-import Loader from "react-loader-spinner";
+import {ThreeDots} from "react-loader-spinner";
+import dayjs from "dayjs";
 
 export default function InputPage() {
   const [formData, setFormData] = useState({
     value: "",
     description: "",
     type: "input",
+    date: dayjs().format("DD/MM")
   });
   const [loading, setLoading] = useState(false);
   const { user } = useContext(UserContext);
@@ -56,8 +58,7 @@ export default function InputPage() {
         />
         <Button disabled={loading}>
           {loading ? (
-            <Loader
-              type="ThreeDots"
+            <ThreeDots
               color="#FFFFFF"
               height={13}
               width={51}

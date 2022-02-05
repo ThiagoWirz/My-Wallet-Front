@@ -25,12 +25,13 @@ const RegisterBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: #ffffff;
   margin: 20px 0;
+  padding: 10px;
+  gap: 10px;
+  position: relative;
 
-  span {
+  p {
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -65,4 +66,18 @@ const ButtonBox = styled.div`
   }
 `;
 
-export { Container, RegisterBox, ButtonBox };
+const Balance = styled.div`
+width: 90%;
+position: absolute;
+bottom: 5px;
+display: flex;
+justify-content: space-between;
+.red{
+  color: red
+}
+.green{
+  color: green
+}
+`
+
+export { Container, RegisterBox, ButtonBox, Balance };

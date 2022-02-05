@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import UserContext from "../../contexts/userContext";
 import { useContext, useState } from "react";
 import { logIn } from "../../services/mywallet";
-import Loader from "react-loader-spinner";
+import {ThreeDots} from "react-loader-spinner";
 
 
 export default function LoginPage() {
@@ -24,7 +24,7 @@ export default function LoginPage() {
     const promise = logIn(formData)
     promise.then((response)=>{
       setUser(response.data)
-      localStorage.setItem('Last User', JSON.stringify(response.data));
+      localStorage.setItem("last-user", JSON.stringify(response.data));
       setLoading(false)
       navigate("/account")
     })
@@ -42,8 +42,7 @@ export default function LoginPage() {
         <input disabled={loading} onChange={handleInputChange} value={formData.password} type="password" placeholder="Senha" name="password" />
         <Button disabled={loading}>
           {loading ? (
-            <Loader
-              type="ThreeDots"
+            <ThreeDots
               color="#FFFFFF"
               height={13}
               width={51}

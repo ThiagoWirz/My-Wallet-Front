@@ -3,7 +3,7 @@ import logo from "../../assets/img/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { signUp } from "../../services/mywallet";
-import Loader from "react-loader-spinner";
+import {ThreeDots} from "react-loader-spinner";
 
 export default function SignUpPage() {
   const navigate = useNavigate();
@@ -76,8 +76,7 @@ export default function SignUpPage() {
         />
         <Button disabled={loading}>
           {loading ? (
-            <Loader
-              type="ThreeDots"
+            <ThreeDots
               color="#FFFFFF"
               height={13}
               width={51}
