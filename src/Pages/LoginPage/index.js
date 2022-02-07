@@ -28,7 +28,6 @@ export default function LoginPage() {
     setLoading(true);
     const promise = logIn(formData);
     promise.then((response) => {
-      console.log(response.data);
       setUser(response.data);
       localStorage.setItem("last-user", JSON.stringify(response.data));
       setLoading(false);

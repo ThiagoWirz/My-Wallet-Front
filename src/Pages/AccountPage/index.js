@@ -48,7 +48,6 @@ export default function AccountPage() {
       navigate("/");
     }
   }
-  console.log(user);
 
   return (
     <Container>
