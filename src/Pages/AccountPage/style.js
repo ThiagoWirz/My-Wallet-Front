@@ -38,6 +38,9 @@ const RegisterBox = styled.div`
     line-height: 23px;
     text-align: center;
   }
+  b {
+    font-weight: bold;
+  }
 `;
 
 const ButtonBox = styled.div`

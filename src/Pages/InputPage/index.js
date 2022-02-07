@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../contexts/userContext";
 import { postCredit } from "../../services/mywallet";
-import { Container, Button } from "./style";
+import { Container, Button, BackButton } from "./style";
 import { ThreeDots } from "react-loader-spinner";
 import dayjs from "dayjs";
 
@@ -39,7 +39,10 @@ export default function InputPage() {
 
   return (
     <Container>
-      <header>Nova entrada</header>
+      <header>
+        Nova entrada{" "}
+        <BackButton onClick={() => navigate(-1)}> Voltar</BackButton>
+      </header>
       <form onSubmit={handlePostCredit}>
         <input
           disabled={loading}

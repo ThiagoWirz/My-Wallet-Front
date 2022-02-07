@@ -1,4 +1,4 @@
-import { Container, Button } from "../InputPage/style";
+import { Container, Button, BackButton } from "../InputPage/style";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../contexts/userContext";
 import { postCredit } from "../../services/mywallet";
@@ -39,7 +39,9 @@ export default function OutputPage() {
 
   return (
     <Container>
-      <header>Nova saída</header>
+      <header>
+        Nova saída <BackButton onClick={() => navigate(-1)}> Voltar</BackButton>
+      </header>
       <form onSubmit={handlePostCredit}>
         <input
           disabled={loading}

@@ -62,7 +62,7 @@ export default function AccountPage() {
           credits.map((c, i) => <Credit credit={c} key={i} />)
         )}
         <Balance>
-          Saldo{" "}
+          <b>Saldo</b>{" "}
           <span className={finalBalance >= 0 ? "green" : "red"}>
             {finalBalance}
           </span>{" "}

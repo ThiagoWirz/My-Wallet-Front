@@ -54,4 +54,11 @@ const Button = styled.button`
   margin-bottom: 25px;
 `;
 
-export { Container, Button };
+const BackButton = styled.button`
+  width: 100px;
+  border: none;
+  color: black;
+  background-color: orange;
+`;
+
+export { Container, Button, BackButton };
