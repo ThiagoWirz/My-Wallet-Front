@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Container = styled.div`
   height: 100%;
@@ -7,8 +7,7 @@ const Container = styled.div`
   align-items: center;
   padding: 25px;
 
-
-    header {
+  header {
     width: 100%;
     color: #ffffff;
     display: flex;
@@ -18,8 +17,7 @@ const Container = styled.div`
     font-size: 26px;
     line-height: 31px;
   }
-  
-  
+
   form {
     display: flex;
     flex-direction: column;
@@ -42,18 +40,18 @@ const Container = styled.div`
       color: #999999;
     }
   }
-  `
-
-const Button = styled.button`
-width: 98%;
-height: 45px;
-border: hidden;
-background: #a328d6;
-border-radius: 5px;
-font-size: 21px;
-line-height: 26px;
-color: #ffffff;
-margin-bottom: 25px;
 `;
 
-export {Container, Button}
+const Button = styled.button`
+  width: 98%;
+  height: 45px;
+  border: hidden;
+  background: #a328d6;
+  border-radius: 5px;
+  font-size: 21px;
+  line-height: 26px;
+  color: #ffffff;
+  margin-bottom: 25px;
+`;
+
+export { Container, Button };

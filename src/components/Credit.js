@@ -47,12 +47,12 @@ const RightSide = styled.div`
 const Value = styled.span`
   font-size: 16px;
   line-height: 19px;
-  color: ${props => props.type==="input" ? "green" : "red"};
+  color: ${(props) => (props.type === "input" ? "green" : "red")};
 `;
 
 const Button = styled.button`
-border: none;
-font-size: 16px;
-line-height: 19px;
-color: #C6C6C6;
-`
+  border: none;
+  font-size: 16px;
+  line-height: 19px;
+  color: #c6c6c6;
+`;

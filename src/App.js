@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import LoginPage from "./Pages/LoginPage";
@@ -7,23 +6,23 @@ import "./assets/css/style.css";
 import SignUpPage from "./Pages/SignUpPage";
 import AccountPage from "./Pages/AccountPage";
 import InputPage from "./Pages/InputPage";
-import OutputPage from "./Pages/OutputPage"
+import OutputPage from "./Pages/OutputPage";
 import UserContext from "./contexts/userContext";
 
-export default function App(){
-    const lastUser = JSON.parse(localStorage.getItem("last-user"))
-    const [user, setUser] = useState(lastUser)
-    return (
-        <UserContext.Provider value={{user, setUser}}>
-        <BrowserRouter>
+export default function App() {
+  const lastUser = JSON.parse(localStorage.getItem("last-user"));
+  const [user, setUser] = useState(lastUser);
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      <BrowserRouter>
         <Routes>
-            <Route path = "/" element={<LoginPage/>}/>
-            <Route path = "/sign-up" element={<SignUpPage/>}/>
-            <Route path = "/account" element={<AccountPage/>}/>
-            <Route path = "/input" element={<InputPage/>}/>
-            <Route path = "/output" element={<OutputPage/>}/>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/input" element={<InputPage />} />
+          <Route path="/output" element={<OutputPage />} />
         </Routes>
-        </BrowserRouter>
-        </UserContext.Provider>
-    )
+      </BrowserRouter>
+    </UserContext.Provider>
+  );
 }

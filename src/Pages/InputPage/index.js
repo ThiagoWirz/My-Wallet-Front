@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import UserContext from "../../contexts/userContext";
 import { postCredit } from "../../services/mywallet";
 import { Container, Button } from "./style";
-import {ThreeDots} from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import dayjs from "dayjs";
 
 export default function InputPage() {
@@ -11,7 +11,7 @@ export default function InputPage() {
     value: "",
     description: "",
     type: "input",
-    date: dayjs().format("DD/MM")
+    date: dayjs().format("DD/MM"),
   });
   const [loading, setLoading] = useState(false);
   const { user } = useContext(UserContext);
@@ -58,12 +58,7 @@ export default function InputPage() {
         />
         <Button disabled={loading}>
           {loading ? (
-            <ThreeDots
-              color="#FFFFFF"
-              height={13}
-              width={51}
-              timeout={3000}
-            />
+            <ThreeDots color="#FFFFFF" height={13} width={51} timeout={3000} />
           ) : (
             "Salvar Entrada"
           )}

@@ -60,24 +60,24 @@ const ButtonBox = styled.div`
     font-size: 17px;
     line-height: 20px;
     color: #ffffff;
-    ion-icon{
-        font-size: 30px;
+    ion-icon {
+      font-size: 30px;
     }
   }
 `;
 
 const Balance = styled.div`
-width: 90%;
-position: absolute;
-bottom: 5px;
-display: flex;
-justify-content: space-between;
-.red{
-  color: red
-}
-.green{
-  color: green
-}
-`
+  width: 90%;
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  .red {
+    color: red;
+  }
+  .green {
+    color: green;
+  }
+`;
 
 export { Container, RegisterBox, ButtonBox, Balance };

@@ -3,7 +3,7 @@ import logo from "../../assets/img/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { signUp } from "../../services/mywallet";
-import {ThreeDots} from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function SignUpPage() {
   const navigate = useNavigate();
@@ -29,13 +29,13 @@ export default function SignUpPage() {
     setLoading(true);
     const promise = signUp(formData);
     promise.then(() => {
-      setLoading(false)
-      navigate("/")
-    })
-    promise.catch((error) =>{
-      alert(error.response.data.message)
-      setLoading(false)
-    })
+      setLoading(false);
+      navigate("/");
+    });
+    promise.catch((error) => {
+      alert(error.response.data.message);
+      setLoading(false);
+    });
   }
 
   return (
@@ -76,12 +76,7 @@ export default function SignUpPage() {
         />
         <Button disabled={loading}>
           {loading ? (
-            <ThreeDots
-              color="#FFFFFF"
-              height={13}
-              width={51}
-              timeout={3000}
-            />
+            <ThreeDots color="#FFFFFF" height={13} width={51} timeout={3000} />
           ) : (
             "Cadastrar"
           )}
