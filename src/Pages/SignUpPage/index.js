@@ -8,8 +8,8 @@ import {ThreeDots} from "react-loader-spinner";
 export default function SignUpPage() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: "",
     name: "",
+    email: "",
     password: "",
   });
   const [confirmPass, setConfirmPass] = useState("");

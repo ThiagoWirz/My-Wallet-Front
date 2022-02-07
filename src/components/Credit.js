@@ -9,7 +9,7 @@ export default function Credit({ credit }) {
         <Description>{description}</Description>
       </LeftSide>
       <RightSide>
-        <Value type={type}>{value.toFixed(2)}</Value>
+        <Value type={type}>{parseFloat(value).toFixed(2)}</Value>
         <Button>X</Button>
       </RightSide>
     </Container>

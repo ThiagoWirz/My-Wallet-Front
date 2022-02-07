@@ -21,7 +21,6 @@ export default function OutputPage() {
   function handleInputChange(e) {
     formData[e.target.name] = e.target.value;
     setFormData({ ...formData });
-    console.log(formData)
   }
 
   function handlePostCredit(e) {
