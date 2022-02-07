@@ -34,7 +34,7 @@ export default function LoginPage() {
       navigate("/account");
     });
     promise.catch((error) => {
-      alert(error.response.data.message);
+      alert(error);
       setLoading(false);
     });
   }
