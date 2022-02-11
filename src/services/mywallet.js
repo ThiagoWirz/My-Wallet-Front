@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://my-wallet-project-13.herokuapp.com";
 
 function signUp(formData) {
   const promise = axios.post(`${BASE_URL}/auth/sign-up`, formData);
